@@ -34,12 +34,51 @@ class ModelTrainer:
                 "Linear": LinearRegression(),
                 "Ridge": Ridge(),
                 "Lasso": Lasso(),
-                "GradientBoost": GradientBoostingRegressor(),
-                "CatBoost": CatBoostRegressor(),
-                "XGB": XGBRegressor(),
+                "GradientBoost": GradientBoostingRegressor(random_state=42),
+                "CatBoost": CatBoostRegressor(verbose=False, random_state=42),
+                "XGB": XGBRegressor(random_state=42),
+            }
+
+            params = {
+                "Linear": {},
+
+                "Ridge": {
+                    "alpha": [0.1,1,10]
+                },
+
+                "Lasso": {
+                    "alpha": [0.001,0.01,0.1]
+                },
+
+                "GradientBoost": {
+                    "n_estimators": [100, 200, 300],
+                    "max_depth": [2, 3, 4],
+                    "learning_rate": [0.01, 0.03, 0.05, 0.1],
+                    "subsample": [0.6, 0.8, 1.0],
+                    "min_samples_leaf": [1, 3, 5, 10]
+                },
+
+                "CatBoost": {
+                    "iterations": [200, 300, 500],
+                    "depth": [3, 4, 5, 6],
+                    "learning_rate": [0.01, 0.03, 0.05, 0.1],
+                    "l2_leaf_reg": [1, 3, 5, 7, 9]
+                },
+
+                "XGB": {
+                    "n_estimators": [100, 200, 300, 500],
+                    "max_depth": [2, 3, 4, 5, 6],
+                    "learning_rate": [0.01, 0.03, 0.05, 0.1],
+                    "subsample": [0.6, 0.8, 1.0],
+                    "colsample_bytree": [0.6, 0.8, 1.0],
+                    "min_child_weight": [1, 3, 5, 7],
+                    "reg_alpha": [0, 0.1, 1],
+                    "reg_lambda": [1, 1.5, 2]
+                }
+
             }
             model_report:dict=evaluate_models(X_train=X_train,y_train=y_train,X_test=X_test,y_test=y_test,
-                                             models=models)
+                                             models=models,param=params)
             
             ## to get best model score from dict
             best_model_score = max(sorted(model_report.values()))
@@ -60,6 +99,7 @@ class ModelTrainer:
             )
 
             predicted=best_model.predict(X_test)
+            
             r2_square = r2_score(y_test,predicted)
             return r2_square
 
