@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>House Price Prediction</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="left">
+
+            <h1>
+                <i class="fa-solid fa-house"></i>
+                House Price Prediction
+            </h1>
+
+            <p>
+                Predict the market value of your dream house using Machine Learning.
+            </p>
+
+            <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=700"
+                alt="House Image">
+
+        </div>
+
+        <div class="right">
+
+            <form action="/predict" method="POST">
+
+                <div class="input-box">
+                    <label>Area (sq.ft)</label>
+                    <input type="number" name="area" required>
+                </div>
+
+                <div class="grid">
+
+                    <div class="input-box">
+                        <label>Bedrooms</label>
+                        <input type="number" name="bedrooms" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label>Bathrooms</label>
+                        <input type="number" name="bathrooms" required>
+                    </div>
+
+                </div>
+
+                <div class="grid">
+
+                    <div class="input-box">
+                        <label>Stories</label>
+                        <input type="number" name="stories" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label>Parking</label>
+                        <input type="number" name="parking" required>
+                    </div>
+
+                </div>
+
+                <div class="grid">
+
+                    <div class="input-box">
+                        <label>Main Road</label>
+
+                        <select name="mainroad" required>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+
+                    <div class="input-box">
+
+                        <label>Guest Room</label>
+
+                        <select name="guestroom" required>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <div class="grid">
+
+                    <div class="input-box">
+
+                        <label>Basement</label>
+
+                        <select name="basement" required>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+
+                    </div>
+
+                    <div class="input-box">
+
+                        <label>Hot Water Heating</label>
+
+                        <select name="hotwaterheating" required>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <div class="grid">
+
+                    <div class="input-box">
+
+                        <label>Air Conditioning</label>
+
+                        <select name="airconditioning" required>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+
+                    </div>
+
+                    <div class="input-box">
+
+                        <label>Preferred Area</label>
+
+                        <select name="prefarea" required>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <div class="input-box">
+
+                    <label>Furnishing Status</label>
+
+                    <select name="furnishingstatus" required>
+
+                        <option value="">Select Furnishing Status</option>
+
+                        <option value="furnished">Furnished</option>
+
+                        <option value="semi-furnished">Semi-Furnished</option>
+
+                        <option value="unfurnished">Unfurnished</option>
+
+                    </select>
+
+                </div>
+
+                <button type="submit">
+
+                    <i class="fa-solid fa-calculator"></i>
+
+                    Predict Price
+
+                </button>
+
+            </form>
+
+            {% if prediction_text %}
+
+            <div class="result">
+
+                <h2>Estimated House Price</h2>
+
+                <h1>{{ prediction_text }}</h1>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>

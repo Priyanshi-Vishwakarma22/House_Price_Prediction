@@ -1,0 +1,170 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#4f46e5,#2563eb,#0ea5e9);
+    padding:40px;
+}
+
+.container{
+    width:1200px;
+    max-width:100%;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 20px 50px rgba(0,0,0,.25);
+}
+
+.left{
+    background:linear-gradient(135deg,#1e3a8a,#2563eb);
+    color:#fff;
+    padding:50px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.left h1{
+    font-size:38px;
+    margin-bottom:20px;
+}
+
+.left p{
+    font-size:16px;
+    line-height:28px;
+    margin-bottom:30px;
+}
+
+.left img{
+    width:100%;
+    border-radius:15px;
+    object-fit:cover;
+    box-shadow:0 10px 25px rgba(0,0,0,.3);
+}
+
+.right{
+    padding:40px;
+}
+
+form{
+    width:100%;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.input-box{
+    margin-bottom:18px;
+}
+
+.input-box label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+    color:#374151;
+}
+
+.input-box input,
+.input-box select{
+    width:100%;
+    padding:14px;
+    border:1px solid #d1d5db;
+    border-radius:10px;
+    font-size:15px;
+    outline:none;
+    transition:.3s;
+}
+
+.input-box input:focus,
+.input-box select:focus{
+    border-color:#2563eb;
+    box-shadow:0 0 8px rgba(37,99,235,.25);
+}
+
+button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#2563eb;
+    color:#fff;
+    font-size:18px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+    margin-top:10px;
+}
+
+button:hover{
+    background:#1d4ed8;
+    transform:translateY(-2px);
+}
+
+.result{
+    margin-top:25px;
+    background:#ecfeff;
+    border-left:6px solid #0ea5e9;
+    border-radius:12px;
+    padding:20px;
+    text-align:center;
+}
+
+.result h2{
+    color:#374151;
+    margin-bottom:10px;
+}
+
+.result h1{
+    color:#059669;
+    font-size:34px;
+    word-break:break-word;
+}
+
+@media(max-width:950px){
+
+.container{
+    grid-template-columns:1fr;
+}
+
+.left{
+    padding:35px;
+}
+
+.right{
+    padding:30px;
+}
+
+}
+
+@media(max-width:700px){
+
+body{
+    padding:15px;
+}
+
+.grid{
+    grid-template-columns:1fr;
+}
+
+.left h1{
+    font-size:30px;
+}
+
+.result h1{
+    font-size:26px;
+}
+
+}

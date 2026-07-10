@@ -39,7 +39,7 @@ class DataTransformation:
             cat_pipeline=Pipeline(
                   steps=[
                     ("imputer", SimpleImputer(strategy="most_frequent")),
-                    ("one_hot_encoder",OneHotEncoder(drop='first', handle_unknown='ignore'))
+                    ("one_hot_encoder",OneHotEncoder(drop="first",handle_unknown="ignore",sparse_output=False))
                 ]
             )
 
@@ -49,7 +49,8 @@ class DataTransformation:
                 [
                     ("num_pipeline", num_pipeline, numerical_columns),
                     ("cat_pipeline", cat_pipeline, categorical_columns)
-                ]
+                ],
+                remainder="drop"
             )
 
             return preprocessor
@@ -99,7 +100,7 @@ class DataTransformation:
             logging.info(f"saved preprocessing object.")
 
             return (
-                  train_arr,
+                train_arr,
                 test_arr,
                 self.data_transformation_config.preprocessor_obj_file_path
             )

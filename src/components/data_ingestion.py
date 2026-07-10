@@ -3,6 +3,7 @@ import sys
 from src.exception import CustomException
 from src.logger import logging
 import pandas as pd
+import numpy as np
 
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
@@ -29,7 +30,10 @@ class DataIngestion:
         logging.info("Entered the data ingestion method or components")
         try:
             df = pd.read_csv("notebook\data\Housing.csv")
+
             logging.info("Read the dataset as dataframe")
+
+            df["price"] = np.log1p(df["price"])
 
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True)
 

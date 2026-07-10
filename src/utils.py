@@ -70,7 +70,7 @@ def evaluate_models(X_train,y_train,X_test,y_test,models,param):
             # Save tuned model back
             models[list(models.keys())[i]] = model
 
-        return report
+        return report, models
     
     except Exception as e:
         raise CustomException(e,sys)
