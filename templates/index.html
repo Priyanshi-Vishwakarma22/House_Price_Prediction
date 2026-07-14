@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -14,6 +15,7 @@
 
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
 
 <body>
@@ -32,7 +34,7 @@
             </p>
 
             <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=700"
-                alt="House Image">
+                alt="House">
 
         </div>
 
@@ -48,13 +50,31 @@
                 <div class="grid">
 
                     <div class="input-box">
+
                         <label>Bedrooms</label>
-                        <input type="number" name="bedrooms" required>
+
+                        <input
+                            type="number"
+                            id="bedrooms"
+                            name="bedrooms"
+                            min="1"
+                            max="6"
+                            required>
+
                     </div>
 
                     <div class="input-box">
+
                         <label>Bathrooms</label>
-                        <input type="number" name="bathrooms" required>
+
+                        <input
+                            type="number"
+                            id="bathrooms"
+                            name="bathrooms"
+                            min="1"
+                            max="4"
+                            required>
+
                     </div>
 
                 </div>
@@ -62,13 +82,31 @@
                 <div class="grid">
 
                     <div class="input-box">
+
                         <label>Stories</label>
-                        <input type="number" name="stories" required>
+
+                        <input
+                            type="number"
+                            id="stories"
+                            name="stories"
+                            min="1"
+                            max="4"
+                            required>
+
                     </div>
 
                     <div class="input-box">
+
                         <label>Parking</label>
-                        <input type="number" name="parking" required>
+
+                        <input
+                            type="number"
+                            id="parking"
+                            name="parking"
+                            min="0"
+                            max="3"
+                            required>
+
                     </div>
 
                 </div>
@@ -76,12 +114,16 @@
                 <div class="grid">
 
                     <div class="input-box">
+
                         <label>Main Road</label>
 
                         <select name="mainroad" required>
+
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
+
                         </select>
+
                     </div>
 
                     <div class="input-box">
@@ -89,8 +131,10 @@
                         <label>Guest Room</label>
 
                         <select name="guestroom" required>
+
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
+
                         </select>
 
                     </div>
@@ -104,8 +148,10 @@
                         <label>Basement</label>
 
                         <select name="basement" required>
+
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
+
                         </select>
 
                     </div>
@@ -115,8 +161,10 @@
                         <label>Hot Water Heating</label>
 
                         <select name="hotwaterheating" required>
+
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
+
                         </select>
 
                     </div>
@@ -130,8 +178,10 @@
                         <label>Air Conditioning</label>
 
                         <select name="airconditioning" required>
+
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
+
                         </select>
 
                     </div>
@@ -141,8 +191,10 @@
                         <label>Preferred Area</label>
 
                         <select name="prefarea" required>
+
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
+
                         </select>
 
                     </div>
@@ -156,11 +208,8 @@
                     <select name="furnishingstatus" required>
 
                         <option value="">Select Furnishing Status</option>
-
                         <option value="furnished">Furnished</option>
-
                         <option value="semi-furnished">Semi-Furnished</option>
-
                         <option value="unfurnished">Unfurnished</option>
 
                     </select>
