@@ -149,7 +149,7 @@ The best-performing model was selected based on evaluation metrics.
 Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/House-Price-Prediction.git
+git clone https://github.com/Priyanshi-Vishwakarma22/House_Price_Prediction.git
 ```
 
 Move to project folder
@@ -213,21 +213,13 @@ Home Page
 
 Prediction Result
 ```
+### Deployment
+
+- Render
+
 
 ---
 
-## 🔮 Future Improvements
-
-- Deploy on Render
-- Deploy on Railway
-- Add Price Distribution Graph
-- Add Prediction History
-- User Authentication
-- Database Integration
-- Dark Mode
-- REST API Support
-
----
 
 ## 👩‍💻 Author
 
@@ -236,6 +228,14 @@ Prediction Result
 B.Tech Computer Science Engineering (AI & ML)
 
 Python | Machine Learning | Data Analytics | Flask | SQL
+
+### GitHub
+
+https://github.com/Priyanshi-Vishwakarma22
+
+### Live Demo
+
+https://house-price-prediction-9gy7.onrender.com
 
 ---
 
